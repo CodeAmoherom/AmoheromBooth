@@ -1,4 +1,5 @@
 using CA.PlayerController;
+using Cinemachine;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -23,6 +24,8 @@ public class VRMModelImporter : MonoBehaviour
 
     [SerializeField]
     public AnimatorController GlobalAnimation;
+
+    public CinemachineFreeLook AttachedCam;
 
     // Start is called before the first frame update
     void Start()
@@ -89,6 +92,10 @@ public class VRMModelImporter : MonoBehaviour
             SwapMeshes(vrm10Instance.gameObject, m_target);
 
             m_loaded = new Loaded(instance, m_target.transform);
+
+            SkinnedMeshRenderer renderer = vrm10Instance.GetComponentInChildren<SkinnedMeshRenderer>();
+            print($"Imported Model Bounds Y: {renderer.bounds.size.y}");
+
         }
         catch (Exception ex)
         {
