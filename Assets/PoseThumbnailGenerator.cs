@@ -24,6 +24,8 @@ public class PoseThumbnailGenerator : MonoBehaviour
     {
         yield return new WaitForEndOfFrame();
 
+        animator = model.GetComponentInChildren<Animator>();
+
         texture2D = new Texture2D(renderTexture.width, renderTexture.height, TextureFormat.RGB24, false);
         RenderTexture.active = renderTexture;
 
