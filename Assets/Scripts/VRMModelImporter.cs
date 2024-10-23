@@ -27,6 +27,7 @@ public class VRMModelImporter : MonoBehaviour
 
     public CinemachineFreeLook AttachedCam;
 
+    public PoseLoader PoseLoader;
     // Start is called before the first frame update
     void Start()
     {
@@ -126,6 +127,7 @@ public class VRMModelImporter : MonoBehaviour
         importedVRM.transform.SetParent(target.transform);
         importedVRM.transform.localPosition = Vector3.zero;
         importedVRM.transform.localRotation = Quaternion.identity;
+        importedVRM.layer = LayerMask.NameToLayer("Player");
 
         ReplacePlayerAnimator(importedVRM, target);
     }
@@ -162,6 +164,8 @@ public class VRMModelImporter : MonoBehaviour
         {
             Debug.LogWarning("Animator component not found on the imported VRM model.");
         }
+
+        StartCoroutine(PoseLoader.CaptureAllPoses());
     }
 
 
