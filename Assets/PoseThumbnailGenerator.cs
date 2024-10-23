@@ -17,10 +17,10 @@ public class PoseThumbnailGenerator : MonoBehaviour
     public void CaptureTumbnail(string poseName)
     {
         animator.Play(poseName);
-        StartCoroutine(CaptureRoutine());
+        StartCoroutine(CaptureRoutine(poseName));
     }
 
-    private IEnumerator CaptureRoutine()
+    private IEnumerator CaptureRoutine(string posename)
     {
         yield return new WaitForEndOfFrame();
 
@@ -36,7 +36,17 @@ public class PoseThumbnailGenerator : MonoBehaviour
         thumbnailImage.sprite = sprite;
 
         byte[] bytes = texture2D.EncodeToPNG();
-        File.WriteAllBytes(Application.dataPath + "/Thumbnails/" + "PoseThumbnail.png", bytes);
+        string path = Application.dataPath + "/Thumbnails/";
+        string filePath = path + "Thumbnail_" + posename + ".png";
+
+
+        if (!Directory.Exists(path))
+        {
+            Directory.CreateDirectory(path);
+        }
+
+        File.WriteAllBytes(filePath, bytes);
+
 
         RenderTexture.active = null;
     }
