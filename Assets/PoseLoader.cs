@@ -11,7 +11,7 @@ public class PoseLoader : MonoBehaviour
         StartCoroutine(CaptureAllPoses());
     }
 
-    private IEnumerator CaptureAllPoses()
+    public IEnumerator CaptureAllPoses()
     {
         // Loop through each button in the container
         foreach (Transform buttonTransform in PoseButtonContainer.transform)

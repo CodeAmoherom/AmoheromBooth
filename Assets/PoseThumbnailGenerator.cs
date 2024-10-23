@@ -1,3 +1,4 @@
+using CA.PlayerController;
 using System;
 using System.Collections;
 using System.IO;
@@ -6,8 +7,8 @@ using UnityEngine.UI;
 
 public class PoseThumbnailGenerator : MonoBehaviour
 {
+    public PlayerAnimation PlayerBaseAnimator;
     public Camera thumbnailCam;
-    public GameObject model;
     public RenderTexture renderTexture;
     public Animator animator;
     public Image thumbnailImage;
@@ -19,8 +20,12 @@ public class PoseThumbnailGenerator : MonoBehaviour
 
     public void CaptureThumbnail()
     {
-        // Play the pose animation
-        animator.Play(poseName);
+        animator = PlayerBaseAnimator._animator;
+        if (animator != null)
+        {
+            // Play the pose animation
+            animator.Play(poseName);
+        }
 
         // Start the coroutine to capture the pose with a delay
         StartCoroutine(CaptureRoutine(poseName, DelaySeconds));
@@ -30,9 +35,6 @@ public class PoseThumbnailGenerator : MonoBehaviour
     {
         // Wait for the specified delay before capturing the thumbnail
         yield return new WaitForSeconds(delaySecs);
-
-        // Get the animator component
-        animator = model.GetComponentInChildren<Animator>();
 
         // Set up the texture to capture the image from the render texture
         texture2D = new Texture2D(renderTexture.width, renderTexture.height, TextureFormat.RGB24, false);
