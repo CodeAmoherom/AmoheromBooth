@@ -22,7 +22,7 @@ public class PoseRunner : MonoBehaviour
         PoseGenRef.animator.Play(PoseGenRef.poseName);
 
         // Continuously check for movement input during the pose animation
-        while (true)
+        while (true) // Keep the loop running until we exit it
         {
             // Check for movement input (e.g., WASD or arrow keys)
             if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
@@ -32,19 +32,21 @@ public class PoseRunner : MonoBehaviour
                 yield break; // Exit the coroutine once Locomotion is triggered
             }
 
+            // Get the current animation's length and check if it's still playing
+            AnimatorStateInfo stateInfo = PoseGenRef.animator.GetCurrentAnimatorStateInfo(0);
+            if (stateInfo.normalizedTime >= 1f) // Check if the animation has finished
+            {
+                break; // Exit the loop if the animation has completed
+            }
+
             // Keep checking on the next frame
             yield return null;
         }
 
-        // Get the current animation's length
-        AnimatorStateInfo stateInfo = PoseGenRef.animator.GetCurrentAnimatorStateInfo(0);
-
-        // Wait for the animation to finish
-        yield return new WaitForSeconds(stateInfo.length);
-
         // After the pose animation finishes, play "Locomotion"
         PoseGenRef.animator.Play("Locomotion");
     }
+
 
 
     // Update is called once per frame
