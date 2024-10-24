@@ -379,6 +379,7 @@ GameObject:
   - component: {fileID: 27864214}
   - component: {fileID: 27864213}
   - component: {fileID: 27864212}
+  - component: {fileID: 27864216}
   m_Layer: 5
   m_Name: POSE_female_1
   m_TagString: Untagged
@@ -418,8 +419,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660b1494297c66244872a063eb639710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerBaseAnimator: {fileID: 1142576130}
   thumbnailCam: {fileID: 514066090}
-  model: {fileID: 83769171}
   renderTexture: {fileID: 8400000, guid: 882346e68b0eb8c46bb903c07ba0dc40, type: 2}
   animator: {fileID: 656027002}
   thumbnailImage: {fileID: 628346732}
@@ -469,9 +470,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 27864212}
-        m_TargetAssemblyTypeName: PoseThumbnailGenerator, Assembly-CSharp
-        m_MethodName: CaptureTumbnail
+      - m_Target: {fileID: 27864216}
+        m_TargetAssemblyTypeName: PoseRunner, Assembly-CSharp
+        m_MethodName: PlayPoseAttached
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -519,6 +520,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 27864210}
   m_CullTransparentMesh: 1
+--- !u!114 &27864216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27864210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5887be3666b6b6c49b8e19d0d18ea041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PoseGenRef: {fileID: 27864212}
 --- !u!1001 &34139770
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -627,6 +641,7 @@ GameObject:
   - component: {fileID: 55974327}
   - component: {fileID: 55974326}
   - component: {fileID: 55974325}
+  - component: {fileID: 55974329}
   m_Layer: 5
   m_Name: Bow_1
   m_TagString: Untagged
@@ -666,8 +681,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660b1494297c66244872a063eb639710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerBaseAnimator: {fileID: 1142576130}
   thumbnailCam: {fileID: 514066090}
-  model: {fileID: 83769171}
   renderTexture: {fileID: 8400000, guid: 882346e68b0eb8c46bb903c07ba0dc40, type: 2}
   animator: {fileID: 656027002}
   thumbnailImage: {fileID: 1424066841}
@@ -717,9 +732,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 55974325}
-        m_TargetAssemblyTypeName: PoseThumbnailGenerator, Assembly-CSharp
-        m_MethodName: CaptureTumbnail
+      - m_Target: {fileID: 55974329}
+        m_TargetAssemblyTypeName: PoseRunner, Assembly-CSharp
+        m_MethodName: PlayPoseAttached
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -767,11 +782,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 55974323}
   m_CullTransparentMesh: 1
---- !u!1 &83769171 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5558810589804705306, guid: fafe0a04ddcc22c4389cc3a895784577, type: 3}
-  m_PrefabInstance: {fileID: 9042710475313332947}
+--- !u!114 &55974329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 55974323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5887be3666b6b6c49b8e19d0d18ea041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PoseGenRef: {fileID: 55974325}
 --- !u!1 &84939347
 GameObject:
   m_ObjectHideFlags: 0
@@ -964,6 +987,7 @@ GameObject:
   - component: {fileID: 131355930}
   - component: {fileID: 131355929}
   - component: {fileID: 131355928}
+  - component: {fileID: 131355932}
   m_Layer: 5
   m_Name: Wave_1
   m_TagString: Untagged
@@ -1003,8 +1027,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660b1494297c66244872a063eb639710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerBaseAnimator: {fileID: 1142576130}
   thumbnailCam: {fileID: 514066090}
-  model: {fileID: 83769171}
   renderTexture: {fileID: 8400000, guid: 882346e68b0eb8c46bb903c07ba0dc40, type: 2}
   animator: {fileID: 656027002}
   thumbnailImage: {fileID: 850736061}
@@ -1054,9 +1078,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 131355928}
-        m_TargetAssemblyTypeName: PoseThumbnailGenerator, Assembly-CSharp
-        m_MethodName: CaptureTumbnail
+      - m_Target: {fileID: 131355932}
+        m_TargetAssemblyTypeName: PoseRunner, Assembly-CSharp
+        m_MethodName: PlayPoseAttached
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1104,6 +1128,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 131355926}
   m_CullTransparentMesh: 1
+--- !u!114 &131355932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131355926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5887be3666b6b6c49b8e19d0d18ea041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PoseGenRef: {fileID: 131355928}
 --- !u!1 &138627375
 GameObject:
   m_ObjectHideFlags: 0
@@ -1117,6 +1154,7 @@ GameObject:
   - component: {fileID: 138627379}
   - component: {fileID: 138627378}
   - component: {fileID: 138627377}
+  - component: {fileID: 138627381}
   m_Layer: 5
   m_Name: Greeting_2
   m_TagString: Untagged
@@ -1156,8 +1194,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660b1494297c66244872a063eb639710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerBaseAnimator: {fileID: 1142576130}
   thumbnailCam: {fileID: 514066090}
-  model: {fileID: 83769171}
   renderTexture: {fileID: 8400000, guid: 882346e68b0eb8c46bb903c07ba0dc40, type: 2}
   animator: {fileID: 656027002}
   thumbnailImage: {fileID: 1181910512}
@@ -1207,9 +1245,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 138627377}
-        m_TargetAssemblyTypeName: PoseThumbnailGenerator, Assembly-CSharp
-        m_MethodName: CaptureTumbnail
+      - m_Target: {fileID: 138627381}
+        m_TargetAssemblyTypeName: PoseRunner, Assembly-CSharp
+        m_MethodName: PlayPoseAttached
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1257,6 +1295,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 138627375}
   m_CullTransparentMesh: 1
+--- !u!114 &138627381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 138627375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5887be3666b6b6c49b8e19d0d18ea041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PoseGenRef: {fileID: 138627377}
 --- !u!1 &143454887
 GameObject:
   m_ObjectHideFlags: 0
@@ -1874,6 +1925,7 @@ GameObject:
   - component: {fileID: 211377208}
   - component: {fileID: 211377207}
   - component: {fileID: 211377206}
+  - component: {fileID: 211377210}
   m_Layer: 5
   m_Name: POSE_Pic_3
   m_TagString: Untagged
@@ -1913,8 +1965,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660b1494297c66244872a063eb639710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerBaseAnimator: {fileID: 1142576130}
   thumbnailCam: {fileID: 514066090}
-  model: {fileID: 83769171}
   renderTexture: {fileID: 8400000, guid: 882346e68b0eb8c46bb903c07ba0dc40, type: 2}
   animator: {fileID: 656027002}
   thumbnailImage: {fileID: 177772642}
@@ -1964,9 +2016,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 211377206}
-        m_TargetAssemblyTypeName: PoseThumbnailGenerator, Assembly-CSharp
-        m_MethodName: CaptureTumbnail
+      - m_Target: {fileID: 211377210}
+        m_TargetAssemblyTypeName: PoseRunner, Assembly-CSharp
+        m_MethodName: PlayPoseAttached
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2014,6 +2066,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 211377204}
   m_CullTransparentMesh: 1
+--- !u!114 &211377210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211377204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5887be3666b6b6c49b8e19d0d18ea041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PoseGenRef: {fileID: 211377206}
 --- !u!1 &211955736
 GameObject:
   m_ObjectHideFlags: 0
@@ -2499,6 +2564,7 @@ GameObject:
   - component: {fileID: 289060948}
   - component: {fileID: 289060947}
   - component: {fileID: 289060946}
+  - component: {fileID: 289060950}
   m_Layer: 5
   m_Name: POSE_laying_3
   m_TagString: Untagged
@@ -2538,8 +2604,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660b1494297c66244872a063eb639710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerBaseAnimator: {fileID: 1142576130}
   thumbnailCam: {fileID: 514066090}
-  model: {fileID: 83769171}
   renderTexture: {fileID: 8400000, guid: 882346e68b0eb8c46bb903c07ba0dc40, type: 2}
   animator: {fileID: 656027002}
   thumbnailImage: {fileID: 2125368493}
@@ -2589,9 +2655,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 289060946}
-        m_TargetAssemblyTypeName: PoseThumbnailGenerator, Assembly-CSharp
-        m_MethodName: CaptureTumbnail
+      - m_Target: {fileID: 289060950}
+        m_TargetAssemblyTypeName: PoseRunner, Assembly-CSharp
+        m_MethodName: PlayPoseAttached
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2639,6 +2705,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 289060944}
   m_CullTransparentMesh: 1
+--- !u!114 &289060950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289060944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5887be3666b6b6c49b8e19d0d18ea041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PoseGenRef: {fileID: 289060946}
 --- !u!1 &294857576
 GameObject:
   m_ObjectHideFlags: 0
@@ -2962,6 +3041,7 @@ GameObject:
   - component: {fileID: 331297668}
   - component: {fileID: 331297667}
   - component: {fileID: 331297666}
+  - component: {fileID: 331297670}
   m_Layer: 5
   m_Name: Sleep_1
   m_TagString: Untagged
@@ -3001,8 +3081,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660b1494297c66244872a063eb639710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerBaseAnimator: {fileID: 1142576130}
   thumbnailCam: {fileID: 514066090}
-  model: {fileID: 83769171}
   renderTexture: {fileID: 8400000, guid: 882346e68b0eb8c46bb903c07ba0dc40, type: 2}
   animator: {fileID: 656027002}
   thumbnailImage: {fileID: 2044424547}
@@ -3052,9 +3132,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 331297666}
-        m_TargetAssemblyTypeName: PoseThumbnailGenerator, Assembly-CSharp
-        m_MethodName: CaptureTumbnail
+      - m_Target: {fileID: 331297670}
+        m_TargetAssemblyTypeName: PoseRunner, Assembly-CSharp
+        m_MethodName: PlayPoseAttached
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3102,6 +3182,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 331297664}
   m_CullTransparentMesh: 1
+--- !u!114 &331297670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 331297664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5887be3666b6b6c49b8e19d0d18ea041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PoseGenRef: {fileID: 331297666}
 --- !u!1 &333241643 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 031ae19d5a3b3dc4e84233027939c7da, type: 3}
@@ -3741,6 +3834,7 @@ GameObject:
   - component: {fileID: 428334527}
   - component: {fileID: 428334526}
   - component: {fileID: 428334529}
+  - component: {fileID: 428334530}
   m_Layer: 5
   m_Name: Angry_1
   m_TagString: Untagged
@@ -3812,9 +3906,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 428334529}
-        m_TargetAssemblyTypeName: PoseThumbnailGenerator, Assembly-CSharp
-        m_MethodName: CaptureTumbnail
+      - m_Target: {fileID: 428334530}
+        m_TargetAssemblyTypeName: PoseRunner, Assembly-CSharp
+        m_MethodName: PlayPoseAttached
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3874,13 +3968,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660b1494297c66244872a063eb639710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerBaseAnimator: {fileID: 1142576130}
   thumbnailCam: {fileID: 514066090}
-  model: {fileID: 83769171}
   renderTexture: {fileID: 8400000, guid: 882346e68b0eb8c46bb903c07ba0dc40, type: 2}
   animator: {fileID: 656027002}
   thumbnailImage: {fileID: 17714347}
   poseName: Angry_1
   DelaySeconds: 3
+--- !u!114 &428334530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428334524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5887be3666b6b6c49b8e19d0d18ea041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PoseGenRef: {fileID: 428334529}
 --- !u!1 &433170485
 GameObject:
   m_ObjectHideFlags: 0
@@ -3894,6 +4001,7 @@ GameObject:
   - component: {fileID: 433170489}
   - component: {fileID: 433170488}
   - component: {fileID: 433170487}
+  - component: {fileID: 433170491}
   m_Layer: 5
   m_Name: Idle_1
   m_TagString: Untagged
@@ -3933,8 +4041,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660b1494297c66244872a063eb639710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerBaseAnimator: {fileID: 1142576130}
   thumbnailCam: {fileID: 514066090}
-  model: {fileID: 83769171}
   renderTexture: {fileID: 8400000, guid: 882346e68b0eb8c46bb903c07ba0dc40, type: 2}
   animator: {fileID: 656027002}
   thumbnailImage: {fileID: 312860649}
@@ -3984,9 +4092,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 433170487}
-        m_TargetAssemblyTypeName: PoseThumbnailGenerator, Assembly-CSharp
-        m_MethodName: CaptureTumbnail
+      - m_Target: {fileID: 433170491}
+        m_TargetAssemblyTypeName: PoseRunner, Assembly-CSharp
+        m_MethodName: PlayPoseAttached
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4034,6 +4142,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 433170485}
   m_CullTransparentMesh: 1
+--- !u!114 &433170491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433170485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5887be3666b6b6c49b8e19d0d18ea041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PoseGenRef: {fileID: 433170487}
 --- !u!1001 &445871029
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5007,7 +5128,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 31
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: 882346e68b0eb8c46bb903c07ba0dc40, type: 2}
   m_TargetDisplay: 0
@@ -5535,6 +5656,7 @@ GameObject:
   - component: {fileID: 539059098}
   - component: {fileID: 539059097}
   - component: {fileID: 539059096}
+  - component: {fileID: 539059100}
   m_Layer: 5
   m_Name: Greeting_1
   m_TagString: Untagged
@@ -5574,8 +5696,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660b1494297c66244872a063eb639710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerBaseAnimator: {fileID: 1142576130}
   thumbnailCam: {fileID: 514066090}
-  model: {fileID: 83769171}
   renderTexture: {fileID: 8400000, guid: 882346e68b0eb8c46bb903c07ba0dc40, type: 2}
   animator: {fileID: 656027002}
   thumbnailImage: {fileID: 874898729}
@@ -5625,9 +5747,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 539059096}
-        m_TargetAssemblyTypeName: PoseThumbnailGenerator, Assembly-CSharp
-        m_MethodName: CaptureTumbnail
+      - m_Target: {fileID: 539059100}
+        m_TargetAssemblyTypeName: PoseRunner, Assembly-CSharp
+        m_MethodName: PlayPoseAttached
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5675,6 +5797,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 539059094}
   m_CullTransparentMesh: 1
+--- !u!114 &539059100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539059094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5887be3666b6b6c49b8e19d0d18ea041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PoseGenRef: {fileID: 539059096}
 --- !u!1001 &548723583
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5898,6 +6033,7 @@ GameObject:
   - component: {fileID: 594600403}
   - component: {fileID: 594600402}
   - component: {fileID: 594600401}
+  - component: {fileID: 594600405}
   m_Layer: 5
   m_Name: POSE_laying_2
   m_TagString: Untagged
@@ -5937,8 +6073,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660b1494297c66244872a063eb639710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerBaseAnimator: {fileID: 1142576130}
   thumbnailCam: {fileID: 514066090}
-  model: {fileID: 83769171}
   renderTexture: {fileID: 8400000, guid: 882346e68b0eb8c46bb903c07ba0dc40, type: 2}
   animator: {fileID: 656027002}
   thumbnailImage: {fileID: 510315394}
@@ -5988,9 +6124,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 594600401}
-        m_TargetAssemblyTypeName: PoseThumbnailGenerator, Assembly-CSharp
-        m_MethodName: CaptureTumbnail
+      - m_Target: {fileID: 594600405}
+        m_TargetAssemblyTypeName: PoseRunner, Assembly-CSharp
+        m_MethodName: PlayPoseAttached
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6038,6 +6174,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 594600399}
   m_CullTransparentMesh: 1
+--- !u!114 &594600405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594600399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5887be3666b6b6c49b8e19d0d18ea041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PoseGenRef: {fileID: 594600401}
 --- !u!1 &597531425
 GameObject:
   m_ObjectHideFlags: 0
@@ -6051,6 +6200,7 @@ GameObject:
   - component: {fileID: 597531429}
   - component: {fileID: 597531428}
   - component: {fileID: 597531427}
+  - component: {fileID: 597531431}
   m_Layer: 5
   m_Name: POSE_Dead_Float_1
   m_TagString: Untagged
@@ -6090,8 +6240,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660b1494297c66244872a063eb639710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerBaseAnimator: {fileID: 1142576130}
   thumbnailCam: {fileID: 514066090}
-  model: {fileID: 83769171}
   renderTexture: {fileID: 8400000, guid: 882346e68b0eb8c46bb903c07ba0dc40, type: 2}
   animator: {fileID: 656027002}
   thumbnailImage: {fileID: 661148021}
@@ -6141,9 +6291,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 597531427}
-        m_TargetAssemblyTypeName: PoseThumbnailGenerator, Assembly-CSharp
-        m_MethodName: CaptureTumbnail
+      - m_Target: {fileID: 597531431}
+        m_TargetAssemblyTypeName: PoseRunner, Assembly-CSharp
+        m_MethodName: PlayPoseAttached
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6191,6 +6341,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 597531425}
   m_CullTransparentMesh: 1
+--- !u!114 &597531431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597531425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5887be3666b6b6c49b8e19d0d18ea041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PoseGenRef: {fileID: 597531427}
 --- !u!1 &598924511
 GameObject:
   m_ObjectHideFlags: 0
@@ -6204,6 +6367,7 @@ GameObject:
   - component: {fileID: 598924515}
   - component: {fileID: 598924514}
   - component: {fileID: 598924513}
+  - component: {fileID: 598924517}
   m_Layer: 5
   m_Name: Wave_3
   m_TagString: Untagged
@@ -6243,8 +6407,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660b1494297c66244872a063eb639710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerBaseAnimator: {fileID: 1142576130}
   thumbnailCam: {fileID: 514066090}
-  model: {fileID: 83769171}
   renderTexture: {fileID: 8400000, guid: 882346e68b0eb8c46bb903c07ba0dc40, type: 2}
   animator: {fileID: 656027002}
   thumbnailImage: {fileID: 768355558}
@@ -6294,9 +6458,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 598924513}
-        m_TargetAssemblyTypeName: PoseThumbnailGenerator, Assembly-CSharp
-        m_MethodName: CaptureTumbnail
+      - m_Target: {fileID: 598924517}
+        m_TargetAssemblyTypeName: PoseRunner, Assembly-CSharp
+        m_MethodName: PlayPoseAttached
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6344,6 +6508,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 598924511}
   m_CullTransparentMesh: 1
+--- !u!114 &598924517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598924511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5887be3666b6b6c49b8e19d0d18ea041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PoseGenRef: {fileID: 598924513}
 --- !u!1 &628346730
 GameObject:
   m_ObjectHideFlags: 0
@@ -6432,6 +6609,7 @@ GameObject:
   - component: {fileID: 643002000}
   - component: {fileID: 643001999}
   - component: {fileID: 643001998}
+  - component: {fileID: 643002002}
   m_Layer: 5
   m_Name: POSE_Pic_1
   m_TagString: Untagged
@@ -6471,8 +6649,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660b1494297c66244872a063eb639710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerBaseAnimator: {fileID: 1142576130}
   thumbnailCam: {fileID: 514066090}
-  model: {fileID: 83769171}
   renderTexture: {fileID: 8400000, guid: 882346e68b0eb8c46bb903c07ba0dc40, type: 2}
   animator: {fileID: 656027002}
   thumbnailImage: {fileID: 1617819211}
@@ -6522,9 +6700,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 643001998}
-        m_TargetAssemblyTypeName: PoseThumbnailGenerator, Assembly-CSharp
-        m_MethodName: CaptureTumbnail
+      - m_Target: {fileID: 643002002}
+        m_TargetAssemblyTypeName: PoseRunner, Assembly-CSharp
+        m_MethodName: PlayPoseAttached
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6572,6 +6750,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 643001996}
   m_CullTransparentMesh: 1
+--- !u!114 &643002002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 643001996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5887be3666b6b6c49b8e19d0d18ea041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PoseGenRef: {fileID: 643001998}
 --- !u!1 &649035760 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2197288473753552384, guid: a0321a079821cb1499d8b9b2e3514894, type: 3}
@@ -7485,6 +7676,7 @@ GameObject:
   - component: {fileID: 768961097}
   - component: {fileID: 768961096}
   - component: {fileID: 768961095}
+  - component: {fileID: 768961099}
   m_Layer: 5
   m_Name: Salute_1
   m_TagString: Untagged
@@ -7524,8 +7716,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660b1494297c66244872a063eb639710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerBaseAnimator: {fileID: 1142576130}
   thumbnailCam: {fileID: 514066090}
-  model: {fileID: 83769171}
   renderTexture: {fileID: 8400000, guid: 882346e68b0eb8c46bb903c07ba0dc40, type: 2}
   animator: {fileID: 656027002}
   thumbnailImage: {fileID: 143454889}
@@ -7575,9 +7767,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 768961095}
-        m_TargetAssemblyTypeName: PoseThumbnailGenerator, Assembly-CSharp
-        m_MethodName: CaptureTumbnail
+      - m_Target: {fileID: 768961099}
+        m_TargetAssemblyTypeName: PoseRunner, Assembly-CSharp
+        m_MethodName: PlayPoseAttached
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7625,6 +7817,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 768961093}
   m_CullTransparentMesh: 1
+--- !u!114 &768961099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768961093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5887be3666b6b6c49b8e19d0d18ea041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PoseGenRef: {fileID: 768961095}
 --- !u!1 &781798488 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 031ae19d5a3b3dc4e84233027939c7da, type: 3}
@@ -7669,6 +7874,7 @@ GameObject:
   - component: {fileID: 788017266}
   - component: {fileID: 788017265}
   - component: {fileID: 788017264}
+  - component: {fileID: 788017268}
   m_Layer: 5
   m_Name: POSE_Pic_2
   m_TagString: Untagged
@@ -7708,8 +7914,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660b1494297c66244872a063eb639710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerBaseAnimator: {fileID: 1142576130}
   thumbnailCam: {fileID: 514066090}
-  model: {fileID: 83769171}
   renderTexture: {fileID: 8400000, guid: 882346e68b0eb8c46bb903c07ba0dc40, type: 2}
   animator: {fileID: 656027002}
   thumbnailImage: {fileID: 960242496}
@@ -7759,9 +7965,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 788017264}
-        m_TargetAssemblyTypeName: PoseThumbnailGenerator, Assembly-CSharp
-        m_MethodName: CaptureTumbnail
+      - m_Target: {fileID: 788017268}
+        m_TargetAssemblyTypeName: PoseRunner, Assembly-CSharp
+        m_MethodName: PlayPoseAttached
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7809,6 +8015,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 788017262}
   m_CullTransparentMesh: 1
+--- !u!114 &788017268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788017262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5887be3666b6b6c49b8e19d0d18ea041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PoseGenRef: {fileID: 788017264}
 --- !u!1 &798689692 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 031ae19d5a3b3dc4e84233027939c7da, type: 3}
@@ -10054,6 +10273,7 @@ MonoBehaviour:
   m_target: {fileID: 1142576127}
   GlobalAnimation: {fileID: 9100000, guid: 3500dbd71bfbf1f40879cec671c569d7, type: 2}
   AttachedCam: {fileID: 0}
+  PoseLoader: {fileID: 1974769465}
   playerAnimatorController: {fileID: 9100000, guid: 3500dbd71bfbf1f40879cec671c569d7, type: 2}
 --- !u!1001 &1088470672
 PrefabInstance:
@@ -11889,6 +12109,7 @@ GameObject:
   - component: {fileID: 1345022608}
   - component: {fileID: 1345022607}
   - component: {fileID: 1345022606}
+  - component: {fileID: 1345022610}
   m_Layer: 5
   m_Name: POSE_Dance_1
   m_TagString: Untagged
@@ -11928,8 +12149,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660b1494297c66244872a063eb639710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerBaseAnimator: {fileID: 1142576130}
   thumbnailCam: {fileID: 514066090}
-  model: {fileID: 83769171}
   renderTexture: {fileID: 8400000, guid: 882346e68b0eb8c46bb903c07ba0dc40, type: 2}
   animator: {fileID: 656027002}
   thumbnailImage: {fileID: 405670057}
@@ -11979,9 +12200,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1345022606}
-        m_TargetAssemblyTypeName: PoseThumbnailGenerator, Assembly-CSharp
-        m_MethodName: CaptureTumbnail
+      - m_Target: {fileID: 1345022610}
+        m_TargetAssemblyTypeName: PoseRunner, Assembly-CSharp
+        m_MethodName: PlayPoseAttached
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12029,6 +12250,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1345022604}
   m_CullTransparentMesh: 1
+--- !u!114 &1345022610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345022604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5887be3666b6b6c49b8e19d0d18ea041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PoseGenRef: {fileID: 1345022606}
 --- !u!1 &1348644566 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 031ae19d5a3b3dc4e84233027939c7da, type: 3}
@@ -12073,6 +12307,7 @@ GameObject:
   - component: {fileID: 1354221075}
   - component: {fileID: 1354221074}
   - component: {fileID: 1354221073}
+  - component: {fileID: 1354221077}
   m_Layer: 5
   m_Name: Bow_2
   m_TagString: Untagged
@@ -12112,8 +12347,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660b1494297c66244872a063eb639710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerBaseAnimator: {fileID: 1142576130}
   thumbnailCam: {fileID: 514066090}
-  model: {fileID: 83769171}
   renderTexture: {fileID: 8400000, guid: 882346e68b0eb8c46bb903c07ba0dc40, type: 2}
   animator: {fileID: 656027002}
   thumbnailImage: {fileID: 2074163008}
@@ -12163,9 +12398,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1354221073}
-        m_TargetAssemblyTypeName: PoseThumbnailGenerator, Assembly-CSharp
-        m_MethodName: CaptureTumbnail
+      - m_Target: {fileID: 1354221077}
+        m_TargetAssemblyTypeName: PoseRunner, Assembly-CSharp
+        m_MethodName: PlayPoseAttached
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12213,6 +12448,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1354221071}
   m_CullTransparentMesh: 1
+--- !u!114 &1354221077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354221071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5887be3666b6b6c49b8e19d0d18ea041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PoseGenRef: {fileID: 1354221073}
 --- !u!1 &1359020068
 GameObject:
   m_ObjectHideFlags: 0
@@ -13704,6 +13952,7 @@ GameObject:
   - component: {fileID: 1614211782}
   - component: {fileID: 1614211781}
   - component: {fileID: 1614211780}
+  - component: {fileID: 1614211784}
   m_Layer: 5
   m_Name: Dance_1
   m_TagString: Untagged
@@ -13743,8 +13992,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660b1494297c66244872a063eb639710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerBaseAnimator: {fileID: 1142576130}
   thumbnailCam: {fileID: 514066090}
-  model: {fileID: 83769171}
   renderTexture: {fileID: 8400000, guid: 882346e68b0eb8c46bb903c07ba0dc40, type: 2}
   animator: {fileID: 656027002}
   thumbnailImage: {fileID: 1924059019}
@@ -13794,9 +14043,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1614211780}
-        m_TargetAssemblyTypeName: PoseThumbnailGenerator, Assembly-CSharp
-        m_MethodName: CaptureTumbnail
+      - m_Target: {fileID: 1614211784}
+        m_TargetAssemblyTypeName: PoseRunner, Assembly-CSharp
+        m_MethodName: PlayPoseAttached
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13844,6 +14093,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1614211778}
   m_CullTransparentMesh: 1
+--- !u!114 &1614211784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1614211778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5887be3666b6b6c49b8e19d0d18ea041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PoseGenRef: {fileID: 1614211780}
 --- !u!1 &1617819209
 GameObject:
   m_ObjectHideFlags: 0
@@ -14133,6 +14395,7 @@ GameObject:
   - component: {fileID: 1710114740}
   - component: {fileID: 1710114739}
   - component: {fileID: 1710114738}
+  - component: {fileID: 1710114742}
   m_Layer: 5
   m_Name: Rejected_1
   m_TagString: Untagged
@@ -14172,8 +14435,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660b1494297c66244872a063eb639710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerBaseAnimator: {fileID: 1142576130}
   thumbnailCam: {fileID: 514066090}
-  model: {fileID: 83769171}
   renderTexture: {fileID: 8400000, guid: 882346e68b0eb8c46bb903c07ba0dc40, type: 2}
   animator: {fileID: 656027002}
   thumbnailImage: {fileID: 254232297}
@@ -14223,9 +14486,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1710114738}
-        m_TargetAssemblyTypeName: PoseThumbnailGenerator, Assembly-CSharp
-        m_MethodName: CaptureTumbnail
+      - m_Target: {fileID: 1710114742}
+        m_TargetAssemblyTypeName: PoseRunner, Assembly-CSharp
+        m_MethodName: PlayPoseAttached
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14273,6 +14536,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1710114736}
   m_CullTransparentMesh: 1
+--- !u!114 &1710114742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710114736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5887be3666b6b6c49b8e19d0d18ea041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PoseGenRef: {fileID: 1710114738}
 --- !u!1 &1725771502
 GameObject:
   m_ObjectHideFlags: 0
@@ -14637,6 +14913,7 @@ GameObject:
   - component: {fileID: 1829584772}
   - component: {fileID: 1829584771}
   - component: {fileID: 1829584770}
+  - component: {fileID: 1829584774}
   m_Layer: 5
   m_Name: POSE_laying_1
   m_TagString: Untagged
@@ -14676,8 +14953,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660b1494297c66244872a063eb639710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerBaseAnimator: {fileID: 1142576130}
   thumbnailCam: {fileID: 514066090}
-  model: {fileID: 83769171}
   renderTexture: {fileID: 8400000, guid: 882346e68b0eb8c46bb903c07ba0dc40, type: 2}
   animator: {fileID: 656027002}
   thumbnailImage: {fileID: 699529952}
@@ -14727,9 +15004,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1829584770}
-        m_TargetAssemblyTypeName: PoseThumbnailGenerator, Assembly-CSharp
-        m_MethodName: CaptureTumbnail
+      - m_Target: {fileID: 1829584774}
+        m_TargetAssemblyTypeName: PoseRunner, Assembly-CSharp
+        m_MethodName: PlayPoseAttached
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14777,6 +15054,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1829584768}
   m_CullTransparentMesh: 1
+--- !u!114 &1829584774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829584768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5887be3666b6b6c49b8e19d0d18ea041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PoseGenRef: {fileID: 1829584770}
 --- !u!1001 &1831529280
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15944,6 +16234,7 @@ GameObject:
   - component: {fileID: 2049350456}
   - component: {fileID: 2049350455}
   - component: {fileID: 2049350454}
+  - component: {fileID: 2049350458}
   m_Layer: 5
   m_Name: JoyJump_1
   m_TagString: Untagged
@@ -15983,8 +16274,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660b1494297c66244872a063eb639710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerBaseAnimator: {fileID: 1142576130}
   thumbnailCam: {fileID: 514066090}
-  model: {fileID: 83769171}
   renderTexture: {fileID: 8400000, guid: 882346e68b0eb8c46bb903c07ba0dc40, type: 2}
   animator: {fileID: 656027002}
   thumbnailImage: {fileID: 900549173}
@@ -16034,9 +16325,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2049350454}
-        m_TargetAssemblyTypeName: PoseThumbnailGenerator, Assembly-CSharp
-        m_MethodName: CaptureTumbnail
+      - m_Target: {fileID: 2049350458}
+        m_TargetAssemblyTypeName: PoseRunner, Assembly-CSharp
+        m_MethodName: PlayPoseAttached
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16084,6 +16375,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2049350452}
   m_CullTransparentMesh: 1
+--- !u!114 &2049350458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049350452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5887be3666b6b6c49b8e19d0d18ea041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PoseGenRef: {fileID: 2049350454}
 --- !u!1 &2054207382
 GameObject:
   m_ObjectHideFlags: 0
@@ -16597,6 +16901,7 @@ GameObject:
   - component: {fileID: 2119338909}
   - component: {fileID: 2119338908}
   - component: {fileID: 2119338907}
+  - component: {fileID: 2119338911}
   m_Layer: 5
   m_Name: Wave_2
   m_TagString: Untagged
@@ -16636,8 +16941,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660b1494297c66244872a063eb639710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerBaseAnimator: {fileID: 1142576130}
   thumbnailCam: {fileID: 514066090}
-  model: {fileID: 83769171}
   renderTexture: {fileID: 8400000, guid: 882346e68b0eb8c46bb903c07ba0dc40, type: 2}
   animator: {fileID: 656027002}
   thumbnailImage: {fileID: 584811850}
@@ -16687,9 +16992,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2119338907}
-        m_TargetAssemblyTypeName: PoseThumbnailGenerator, Assembly-CSharp
-        m_MethodName: CaptureTumbnail
+      - m_Target: {fileID: 2119338911}
+        m_TargetAssemblyTypeName: PoseRunner, Assembly-CSharp
+        m_MethodName: PlayPoseAttached
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16737,6 +17042,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2119338905}
   m_CullTransparentMesh: 1
+--- !u!114 &2119338911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2119338905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5887be3666b6b6c49b8e19d0d18ea041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PoseGenRef: {fileID: 2119338907}
 --- !u!1 &2125368491
 GameObject:
   m_ObjectHideFlags: 0
@@ -17020,8 +17338,8 @@ SceneRoots:
   - {fileID: 514066091}
   - {fileID: 963194228}
   - {fileID: 1779980720}
-  - {fileID: 1463947189}
   - {fileID: 245474672}
+  - {fileID: 1463947189}
   - {fileID: 294857578}
   - {fileID: 1413381870}
   - {fileID: 1462104095}
