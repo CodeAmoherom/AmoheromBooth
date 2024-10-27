@@ -48,12 +48,9 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (!FullCam.enabled)
+        if (FullCam.Priority < 1)
         {
-            FullCam.transform.position = 
-                playerTransform.position + playerTransform.rotation * PhotoCamLocationOffset;
-            FullCam.transform.rotation = 
-                playerTransform.transform.rotation;
+            FullCam.transform.position = MainCamera.transform.position;
         }
 
 
@@ -96,6 +93,7 @@ public class GameManager : MonoBehaviour
             print("Mouse Capture Off");
             isMouseCaptureOff = true;
             ThirdPersonCam.enabled = false;
+            FullCam.enabled = false;
 
         }
         else if (Input.GetKeyUp(KeyCode.LeftAlt))
@@ -103,6 +101,7 @@ public class GameManager : MonoBehaviour
             print("Mouse Capture On");
             isMouseCaptureOff = false;
             ThirdPersonCam.enabled = true;
+            FullCam.enabled = true;
         }
 
     }
