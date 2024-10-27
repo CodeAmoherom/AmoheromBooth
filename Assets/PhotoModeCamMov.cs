@@ -37,6 +37,10 @@ public class PhotoModeCamMov : MonoBehaviour
             }
 
             transform.eulerAngles = new Vector3(pitch, yaw, 0f);
+
+            CinemachineComposer CamCom = 
+                virtualCamera.GetComponentInChildren<CinemachineComposer>();
+            CamCom.m_TrackedObjectOffset = new Vector3(-yaw, -pitch, 0f);
         }
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PoseLoader : MonoBehaviour
 {
     public GameObject PoseButtonContainer;
+    public GameManager GameManager;
     // Start is called before the first frame
     void Start()
     {
@@ -13,6 +14,7 @@ public class PoseLoader : MonoBehaviour
 
     public IEnumerator CaptureAllPoses()
     {
+        GameManager.ShowLoadingScreen();
         // Loop through each button in the container
         foreach (Transform buttonTransform in PoseButtonContainer.transform)
         {
@@ -29,6 +31,7 @@ public class PoseLoader : MonoBehaviour
                 yield return new WaitForSeconds(poseThumbnailGenerator.DelaySeconds);
             }
         }
+        GameManager.HideLoadingScreen();
     }
 
     // Update is called once per frame
