@@ -3,6 +3,7 @@ using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,24 +11,51 @@ public class GameManager : MonoBehaviour
 {
     public PoseThumbnailGenerator thumbnailGenerator;
     public GameObject GameUI;
+    public GameObject CameraUI;
     public PlayerMovement PlayerMovement;
-    public CinemachineVirtualCamera FullCam;
+    
     public CinemachineFreeLook ThirdPersonCam;
+
+    public CinemachineVirtualCamera FullCam;
     public Camera MainCamera;
+
+    public Vector3 PhotoCamRotationOffset = new Vector3(0, 180, 0);
+    public Vector3 PhotoCamLocationOffset = new Vector3(0, 0, 0);
 
     public PlayerLocomotioninput Locomotioninput;
     public Transform playerTransform;
 
+    public bool isLoading = false;
+    public GameObject LoadingVideo;
+
+    public bool isMouseCaptureOff = false;
 
     bool isInCam = false;
 
+    public void ShowLoadingScreen()
+    {
+        LoadingVideo.gameObject.SetActive(true);
+        Locomotioninput.enabled = false;
+        PlayerMovement.enabled = false;
+    }
+
+    public void HideLoadingScreen()
+    {
+        LoadingVideo.gameObject.SetActive(false);
+        Locomotioninput.enabled = true;
+        PlayerMovement.enabled = true;
+    }
+
     private void Update()
     {
-        if (FullCam.Priority < 1)
+        if (!FullCam.enabled)
         {
-            FullCam.transform.position = MainCamera.transform.position;
-            FullCam.transform.rotation = MainCamera.transform.rotation;
+            FullCam.transform.position = 
+                playerTransform.position + playerTransform.rotation * PhotoCamLocationOffset;
+            FullCam.transform.rotation = 
+                playerTransform.transform.rotation;
         }
+
 
         if (Input.GetKeyDown(KeyCode.C) && !isInCam)
         {
@@ -42,22 +70,40 @@ public class GameManager : MonoBehaviour
 
             Locomotioninput.enabled = false;
 
+            CameraUI.gameObject.SetActive(true);
             
-
             isInCam = true;
         }
         else if(Input.GetKeyDown(KeyCode.C) && isInCam)
         {
             print("Leaving Cam");
             GameUI.SetActive(true);
-            PlayerMovement.enabled = true;
+            
             FullCam.Priority = 0;
             ThirdPersonCam.Priority = 10;
-            Locomotioninput.enabled = true;
 
+            if (!isLoading)
+            {
+                PlayerMovement.enabled = true;
+                Locomotioninput.enabled = true;
+            }
+            CameraUI.gameObject.SetActive(false);
             isInCam = false;
         }
 
+        if (Input.GetKeyDown(KeyCode.LeftAlt))
+        {
+            print("Mouse Capture Off");
+            isMouseCaptureOff = true;
+            ThirdPersonCam.enabled = false;
+
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftAlt))
+        {
+            print("Mouse Capture On");
+            isMouseCaptureOff = false;
+            ThirdPersonCam.enabled = true;
+        }
 
     }
 
