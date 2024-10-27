@@ -31,7 +31,7 @@ public class PhotoModeCamMov : MonoBehaviour
             if (Input.GetMouseButton(1))
             {
                 yaw += lookSpeed * Input.GetAxis("Mouse X");
-                pitch -= lookSpeed * Input.GetAxis("Mouse Y");
+                pitch += lookSpeed * Input.GetAxis("Mouse Y");
 
                 pitch = Mathf.Clamp(pitch, -89f, 89f);
             }
@@ -40,7 +40,7 @@ public class PhotoModeCamMov : MonoBehaviour
 
             CinemachineComposer CamCom = 
                 virtualCamera.GetComponentInChildren<CinemachineComposer>();
-            CamCom.m_TrackedObjectOffset = new Vector3(-yaw, -pitch, 0f);
+            CamCom.m_TrackedObjectOffset = new Vector3(-yaw, pitch, 0f);
         }
     }
 }
