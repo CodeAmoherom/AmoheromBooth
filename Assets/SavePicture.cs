@@ -36,10 +36,24 @@ public class SavePicture : MonoBehaviour
         }
 
         File.WriteAllBytes(filePath, pixlArray);
+
+
+        // Copy to Windows Pictures folder under "Amoherom Booth"
+        string picturesPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures), "Amoherom Booth");
+        if (!Directory.Exists(picturesPath))
+        {
+            Directory.CreateDirectory(picturesPath);
+        }
+
+        // Copy the file to the Pictures folder
+        string picturesFilePath = Path.Combine(picturesPath, Path.GetFileName(filePath));
+        File.Copy(filePath, picturesFilePath, true); // true to overwrite if exists
+
+        // Clean up
         Camera.targetTexture = null;
         screenTexture.Release();
-        Destroy(renderedTexture );
-        Destroy(screenTexture );
+        Destroy(renderedTexture);
+        Destroy(screenTexture);
         Resources.UnloadUnusedAssets();
     }
 }
