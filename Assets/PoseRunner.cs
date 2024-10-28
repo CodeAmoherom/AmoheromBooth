@@ -25,7 +25,7 @@ public class PoseRunner : MonoBehaviour
         // Continuously check for movement input during the pose animation
         while (true) // Keep the loop running until we exit it
         {
-            print("InputCheckRunning");
+
             // Check for movement input (e.g., WASD or arrow keys)
             if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
             {
@@ -45,7 +45,7 @@ public class PoseRunner : MonoBehaviour
             }
             yield return null;
         }
-        print("Input Check Off");
+
         PoseGenRef.animator.Play("Locomotion");
         yield return null;
     }
