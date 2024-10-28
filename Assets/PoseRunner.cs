@@ -5,6 +5,7 @@ using UnityEngine;
 public class PoseRunner : MonoBehaviour
 {
     public PoseThumbnailGenerator PoseGenRef;
+    public bool isAnipose = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,34 +25,29 @@ public class PoseRunner : MonoBehaviour
         // Continuously check for movement input during the pose animation
         while (true) // Keep the loop running until we exit it
         {
+            print("InputCheckRunning");
             // Check for movement input (e.g., WASD or arrow keys)
             if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
             {
                 // Movement input detected, immediately switch to "Locomotion"
-                PoseGenRef.animator.Play("Locomotion");
-                yield break; // Exit the coroutine once Locomotion is triggered
+                PoseGenRef.animator.StopPlayback();
+                break; // Exit the coroutine once Locomotion is triggered
             }
 
-            // Get the current animation's length and check if it's still playing
-            AnimatorStateInfo stateInfo = PoseGenRef.animator.GetCurrentAnimatorStateInfo(0);
-            if (stateInfo.normalizedTime >= 1f) // Check if the animation has finished
+            if (isAnipose)
             {
-                break; // Exit the loop if the animation has completed
+                // Get the current animation's length and check if it's still playing
+                AnimatorStateInfo stateInfo = PoseGenRef.animator.GetCurrentAnimatorStateInfo(0);
+                if (stateInfo.normalizedTime >= 1f) // Check if the animation has finished
+                {
+                    break; // Exit the loop if the animation has completed
+                }
             }
-
-            // Keep checking on the next frame
             yield return null;
         }
-
-        // After the pose animation finishes, play "Locomotion"
+        print("Input Check Off");
         PoseGenRef.animator.Play("Locomotion");
+        yield return null;
     }
 
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
