@@ -176,6 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 11229659}
+  isAnipose: 0
 --- !u!114 &11229659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -444,6 +445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 108603414}
+  isAnipose: 0
 --- !u!114 &108603414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -686,6 +688,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 136719385}
+  isAnipose: 0
 --- !u!114 &136719385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1090,6 +1093,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 193829857}
+  isAnipose: 0
 --- !u!114 &193829857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1547,6 +1551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 280865004}
+  isAnipose: 0
 --- !u!114 &280865004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1714,6 +1719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 281376915}
+  isAnipose: 0
 --- !u!114 &281376915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1956,6 +1962,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 292528050}
+  isAnipose: 0
 --- !u!114 &292528050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2318,6 +2325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 334920658}
+  isAnipose: 0
 --- !u!114 &334920658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3025,6 +3033,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 599552080}
+  isAnipose: 0
 --- !u!114 &599552080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3192,6 +3201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 606941813}
+  isAnipose: 0
 --- !u!114 &606941813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3405,6 +3415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 754606959}
+  isAnipose: 0
 --- !u!114 &754606959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4290,7 +4301,8 @@ Transform:
   m_LocalPosition: {x: 0.047026634, y: 1.04, z: 3.1696508}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1505674865}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &963194229
@@ -4531,6 +4543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 982842961}
+  isAnipose: 0
 --- !u!114 &982842961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5610,6 +5623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 1170793779}
+  isAnipose: 0
 --- !u!114 &1170793779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5927,6 +5941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 1223210701}
+  isAnipose: 0
 --- !u!114 &1223210701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6170,6 +6185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 1241660531}
+  isAnipose: 0
 --- !u!114 &1241660531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6502,6 +6518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 1295689016}
+  isAnipose: 0
 --- !u!114 &1295689016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6669,6 +6686,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 1327707935}
+  isAnipose: 0
 --- !u!114 &1327707935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7745,6 +7763,98 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1505674864
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1505674865}
+  - component: {fileID: 1505674867}
+  - component: {fileID: 1505674866}
+  m_Layer: 6
+  m_Name: Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1505674865
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505674864}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 963194228}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &1505674866
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505674864}
+  m_Enabled: 0
+--- !u!20 &1505674867
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505674864}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 26.991467
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
 --- !u!1 &1507831318
 GameObject:
   m_ObjectHideFlags: 0
@@ -7894,6 +8004,7 @@ GameObject:
   - component: {fileID: 1546473202}
   - component: {fileID: 1546473201}
   - component: {fileID: 1546473200}
+  - component: {fileID: 1546473203}
   m_Layer: 5
   m_Name: ShutterSec
   m_TagString: Untagged
@@ -7963,7 +8074,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1546473201}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1546473203}
+        m_TargetAssemblyTypeName: SavePicture, Assembly-CSharp
+        m_MethodName: SaveCameraView
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1546473201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8002,6 +8125,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1546473198}
   m_CullTransparentMesh: 1
+--- !u!114 &1546473203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546473198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc9b5037d9d724d4d983755d42ba265c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Camera: {fileID: 1505674867}
+  CameraWidth: 3840
+  CameraHeight: 2160
+  CameraBitDepth: 32
 --- !u!1 &1562846325
 GameObject:
   m_ObjectHideFlags: 0
@@ -8131,6 +8270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 1578899924}
+  isAnipose: 0
 --- !u!114 &1578899924
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8363,7 +8503,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 2014065849}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.21841663
+  m_Size: 0.24081264
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -8460,6 +8600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 1632898780}
+  isAnipose: 0
 --- !u!114 &1632898780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8809,6 +8950,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 1689029341}
+  isAnipose: 0
 --- !u!114 &1689029341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9051,6 +9193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 1754936966}
+  isAnipose: 0
 --- !u!114 &1754936966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9293,6 +9436,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 1779438982}
+  isAnipose: 0
 --- !u!114 &1779438982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10028,6 +10172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 1929765337}
+  isAnipose: 0
 --- !u!114 &1929765337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11853,6 +11998,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 6562660584017132816}
+  isAnipose: 0
 --- !u!1 &398807746128185021
 GameObject:
   m_ObjectHideFlags: 0
@@ -12067,6 +12213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 4247359486175193696}
+  isAnipose: 0
 --- !u!224 &515041049901136760
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12243,6 +12390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 6354715628801992532}
+  isAnipose: 0
 --- !u!114 &827614872556386225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12596,6 +12744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 8964717868478161447}
+  isAnipose: 0
 --- !u!222 &1196113851060315867
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12874,6 +13023,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 4101087961657898080}
+  isAnipose: 0
 --- !u!114 &1467474773591101272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12943,6 +13093,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 9208245833475627239}
+  isAnipose: 0
 --- !u!224 &1515179868369417909
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13081,6 +13232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 7797037594167944449}
+  isAnipose: 0
 --- !u!114 &1588215806605361363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13444,6 +13596,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 3904683937255520584}
+  isAnipose: 0
 --- !u!1 &2036249162519685736
 GameObject:
   m_ObjectHideFlags: 0
@@ -14410,6 +14563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 3423730401279265811}
+  isAnipose: 0
 --- !u!224 &3065423566950665778
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15130,6 +15284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 6900400395575160504}
+  isAnipose: 0
 --- !u!114 &3876013258901132676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15840,6 +15995,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 845918335268448335}
+  isAnipose: 0
 --- !u!114 &4381847308669947327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16449,6 +16605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 3589514461022070783}
+  isAnipose: 0
 --- !u!114 &5068593794879675839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16597,6 +16754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 3444611426063904529}
+  isAnipose: 0
 --- !u!1 &5388236994006344076
 GameObject:
   m_ObjectHideFlags: 0
@@ -17307,6 +17465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 4895454606325617965}
+  isAnipose: 0
 --- !u!224 &6267205178921707684
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17339,6 +17498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 7847396420681562488}
+  isAnipose: 0
 --- !u!224 &6275872227013853708
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18140,6 +18300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 2722901934232809168}
+  isAnipose: 0
 --- !u!224 &7123680130701676717
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18245,6 +18406,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 2262737168934227689}
+  isAnipose: 0
 --- !u!114 &7221296451309328215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18576,6 +18738,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 7495848678673476597}
+  isAnipose: 0
 --- !u!224 &7566849230180265149
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18767,6 +18930,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 8805723266035899618}
+  isAnipose: 0
 --- !u!222 &7728057902369694981
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19051,6 +19215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 966214271833037454}
+  isAnipose: 0
 --- !u!222 &7900688841477223907
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19258,6 +19423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 2769501447594962409}
+  isAnipose: 0
 --- !u!1 &8265364266668890428
 GameObject:
   m_ObjectHideFlags: 0
@@ -19438,6 +19604,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 2533799497607013944}
+  isAnipose: 0
 --- !u!222 &8472369479266260743
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19587,6 +19754,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PoseGenRef: {fileID: 4402653145855755785}
+  isAnipose: 0
 --- !u!114 &8614498290190865176
 MonoBehaviour:
   m_ObjectHideFlags: 0
