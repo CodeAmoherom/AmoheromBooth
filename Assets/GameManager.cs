@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
     public bool isLoading = false;
     public GameObject LoadingVideo;
 
+    public bool isInPhotoMode = false;
+
     public bool isMouseCaptureOff = false;
 
     bool isInCam = false;
@@ -68,7 +70,8 @@ public class GameManager : MonoBehaviour
             Locomotioninput.enabled = false;
 
             CameraUI.gameObject.SetActive(true);
-            
+
+            isInPhotoMode = true;
             isInCam = true;
         }
         else if(Input.GetKeyDown(KeyCode.C) && isInCam)
@@ -85,6 +88,7 @@ public class GameManager : MonoBehaviour
                 Locomotioninput.enabled = true;
             }
             CameraUI.gameObject.SetActive(false);
+            isInPhotoMode = false;
             isInCam = false;
         }
 
