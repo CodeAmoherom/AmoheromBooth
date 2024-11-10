@@ -23,20 +23,35 @@ public class PlayerMovement : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
 
-        Vector3 direction = new Vector3 (horizontal, 0f, vertical).normalized;
+        Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
 
+        // Check if the player is grounded
+        groundedPlayer = controller.isGrounded;
 
+        // Reset vertical velocity when grounded
+        if (groundedPlayer && playerVelocity.y < 0)
+        {
+            playerVelocity.y = 0f; // Prevent the player from sticking to the ground
+        }
+
+        // Handle jump input
+        if (groundedPlayer && Input.GetKeyDown(KeyCode.Space))
+        {
+            playerVelocity.y = Mathf.Sqrt(jumpHeight * -2f * gravityValue); // Jump formula
+        }
+
+        // Handle movement
         if (direction.magnitude >= 0.1f)
         {
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + Cam.eulerAngles.y;
 
-            // Smooht the turn angle
+            // Smooth the turn angle
             float angle = Mathf.SmoothDampAngle(
-                transform.eulerAngles.y, 
-                targetAngle, 
+                transform.eulerAngles.y,
+                targetAngle,
                 ref turnSmoothVelocity,
                 turnSmoothTime
-                );
+            );
 
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
@@ -44,29 +59,14 @@ public class PlayerMovement : MonoBehaviour
             controller.Move(moveDir * playerSpeed * Time.deltaTime);
         }
 
-        /*
-        groundedPlayer = controller.isGrounded;
-        if (groundedPlayer && playerVelocity.y < 0)
+        // Apply gravity if the player is not grounded
+        if (!groundedPlayer)
         {
-            playerVelocity.y = 0f;
+            playerVelocity.y += gravityValue * Time.deltaTime; // Apply gravity
         }
 
-        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        controller.Move(move * Time.deltaTime * playerSpeed);
-
-        if (move != Vector3.zero)
-        {
-            gameObject.transform.forward = move;
-        }
-
-        // Changes the height position of the player..
-        if (Input.GetButtonDown("Jump") && groundedPlayer)
-        {
-            playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
-        }
-
-        playerVelocity.y += gravityValue * Time.deltaTime;
+        // Apply vertical movement (jump or fall)
         controller.Move(playerVelocity * Time.deltaTime);
-        */
     }
+
 }
