@@ -1,6 +1,18 @@
-# Amoherom Booth v0.0.1
+<div>
+  <img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Windows">
+  <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" alt="Windows">
+  <img src="https://img.shields.io/badge/Made%20with-Unity-57b9d3.svg?style=for-the-badge&logo=unity" alt="Unity">
+</div>
+
+# Amoherom Booth
 **Developer**: AMOHEROM  
+<img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" alt="Maintained?">
 ---
+
+> **🚧 WIP - Under Development:**
+> 
+> I'm still developing this while learning Unity. Feel free to contribute to the development process!
+
 
 ## Introduction
 
